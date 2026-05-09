@@ -82,30 +82,26 @@
       background-position:center;
     }
 
+    /* PREMIUM LOGO */
+
     .hero img{
       width:260px;
       margin-bottom:35px;
       border-radius:50%;
       padding:18px;
+
       background:rgba(255,255,255,0.03);
-      backdrop-filter:blur(10px);
+      backdrop-filter:blur(12px);
+
       border:2px solid rgba(250,204,21,0.3);
 
       box-shadow:
       0 0 20px rgba(250,204,21,0.25),
       0 0 60px rgba(250,204,21,0.08);
 
-      transition:0.4s ease;
-
-      animation:float 3s ease-in-out infinite;
-    }
-
-    .hero img:hover{
-      transform:scale(1.05);
-
-      box-shadow:
-      0 0 30px rgba(250,204,21,0.4),
-      0 0 80px rgba(250,204,21,0.15);
+      animation:
+      float 3s ease-in-out infinite,
+      pulseGlow 2.5s infinite alternate;
     }
 
     @keyframes float{
@@ -120,6 +116,22 @@
 
       100%{
         transform:translateY(0px);
+      }
+
+    }
+
+    @keyframes pulseGlow{
+
+      from{
+        box-shadow:
+        0 0 20px rgba(250,204,21,0.2),
+        0 0 50px rgba(250,204,21,0.08);
+      }
+
+      to{
+        box-shadow:
+        0 0 35px rgba(250,204,21,0.55),
+        0 0 90px rgba(250,204,21,0.18);
       }
 
     }
@@ -339,33 +351,12 @@
       transform:scale(1.05);
     }
 
-    /* TERMINAL */
-
-    .terminal{
-      padding:110px 8%;
-      background:#080808;
-    }
-
-    .terminal-box{
-      background:black;
-      padding:55px;
-      border-radius:35px;
-      border:1px solid rgba(250,204,21,0.15);
-
-      color:#facc15;
-      font-size:18px;
-      line-height:2.4;
-
-      box-shadow:0 0 35px rgba(250,204,21,0.08);
-
-      overflow-x:auto;
-    }
-
     /* CONTACT */
 
     .contact{
       padding:110px 8%;
       text-align:center;
+      background:#080808;
     }
 
     .contact h2{
@@ -482,7 +473,7 @@
 
   <section class="hero">
 
-    <!-- REPLACE WITH YOUR LOGO FILE NAME -->
+    <!-- PUT YOUR LOGO FILE NAME HERE -->
 
     <img src="sujith-logo.png" alt="Sujith Fit Logo">
 
@@ -623,35 +614,6 @@
 
   </section>
 
-  <!-- TERMINAL -->
-
-  <section class="terminal">
-
-    <div class="terminal-box">
-
-      <p>$ sudo build-physique</p>
-      <p>Initializing Discipline...</p>
-
-      <br>
-
-      <p>$ install consistency</p>
-      <p>Package installed successfully ⚡</p>
-
-      <br>
-
-      <p>$ run transformation.exe</p>
-      <p>Transformation Started 🔥</p>
-
-      <br>
-
-      <p>$ status</p>
-      <p>Mindset : STRONG ✅</p>
-      <p>Body : LOADING 💪</p>
-
-    </div>
-
-  </section>
-
   <!-- CONTACT -->
 
   <section class="contact" id="contact">
@@ -671,7 +633,7 @@
         Instagram 🔥
       </a>
 
-      <!-- ADD HIS NUMBER BELOW -->
+      <!-- ADD HIS NUMBER -->
 
       <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp">
         WhatsApp 💬
@@ -685,7 +647,7 @@
     Made with ❤️ by his DevOps Girl
   </footer>
 
-  <!-- SCROLL ANIMATION -->
+  <!-- SCROLL REVEAL -->
 
   <script src="https://unpkg.com/scrollreveal"></script>
 

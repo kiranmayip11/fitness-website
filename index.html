@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sujith Fit ⚡</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
 
@@ -13,15 +13,17 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:'Poppins',sans-serif;
       scroll-behavior:smooth;
+      font-family:'Poppins',sans-serif;
     }
 
     body{
-      background:#000;
+      background:black;
       color:white;
       overflow-x:hidden;
     }
+
+    /* NAVBAR */
 
     nav{
       position:fixed;
@@ -32,20 +34,21 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      background:rgba(0,0,0,0.7);
-      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.35);
+      backdrop-filter:blur(15px);
+      border-bottom:1px solid rgba(250,204,21,0.08);
       z-index:1000;
     }
 
     nav h2{
       color:#facc15;
-      font-size:28px;
+      font-size:30px;
       font-weight:800;
     }
 
     nav ul{
       display:flex;
-      gap:30px;
+      gap:35px;
       list-style:none;
     }
 
@@ -53,11 +56,14 @@
       text-decoration:none;
       color:white;
       transition:0.3s;
+      font-weight:500;
     }
 
     nav ul li a:hover{
       color:#facc15;
     }
+
+    /* HERO */
 
     .hero{
       min-height:100vh;
@@ -66,50 +72,96 @@
       align-items:center;
       flex-direction:column;
       text-align:center;
-      padding:120px 20px 80px;
+      padding:130px 20px 80px;
+
       background:
       linear-gradient(rgba(0,0,0,0.82),rgba(0,0,0,0.9)),
       url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1600&auto=format&fit=crop');
+
       background-size:cover;
       background-position:center;
     }
 
     .hero img{
-  width:260px;
-  margin-bottom:35px;
-  border-radius:50%;
-  padding:18px;
-  background:rgba(255,255,255,0.03);
-  backdrop-filter:blur(10px);
-  border:2px solid rgba(250,204,21,0.3);
-  box-shadow:
-    0 0 20px rgba(250,204,21,0.25),
-    0 0 60px rgba(250,204,21,0.08);
-  transition:0.4s ease;
-}
+      width:260px;
+      margin-bottom:35px;
+      border-radius:50%;
+      padding:18px;
+      background:rgba(255,255,255,0.03);
+      backdrop-filter:blur(10px);
+      border:2px solid rgba(250,204,21,0.3);
 
-.hero img:hover{
-  transform:scale(1.05);
-  box-shadow:
-    0 0 30px rgba(250,204,21,0.4),
-    0 0 80px rgba(250,204,21,0.15);
-}
+      box-shadow:
+      0 0 20px rgba(250,204,21,0.25),
+      0 0 60px rgba(250,204,21,0.08);
+
+      transition:0.4s ease;
+
+      animation:float 3s ease-in-out infinite;
+    }
+
+    .hero img:hover{
+      transform:scale(1.05);
+
+      box-shadow:
+      0 0 30px rgba(250,204,21,0.4),
+      0 0 80px rgba(250,204,21,0.15);
+    }
+
+    @keyframes float{
+
+      0%{
+        transform:translateY(0px);
+      }
+
+      50%{
+        transform:translateY(-12px);
+      }
+
+      100%{
+        transform:translateY(0px);
+      }
+
+    }
+
+    .mini-tagline{
+      letter-spacing:6px;
+      color:#facc15;
+      margin-bottom:25px;
+      font-size:14px;
+    }
 
     .hero h1{
-      font-size:70px;
-      line-height:1.2;
-      font-weight:800;
-      color:#facc15;
-      margin-bottom:20px;
-      text-shadow:0 0 20px rgba(250,204,21,0.4);
+      font-size:78px;
+      line-height:1.15;
+      font-weight:900;
+      margin-bottom:25px;
+
+      background:linear-gradient(to right,#facc15,#fde68a,#facc15);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      animation:glow 2s infinite alternate;
+    }
+
+    @keyframes glow{
+
+      from{
+        text-shadow:0 0 10px rgba(250,204,21,0.4);
+      }
+
+      to{
+        text-shadow:0 0 30px rgba(250,204,21,0.9);
+      }
+
     }
 
     .hero p{
-      max-width:900px;
+      max-width:950px;
       font-size:22px;
       color:#d1d5db;
-      line-height:1.8;
-      margin-bottom:40px;
+      line-height:1.9;
+      margin-bottom:45px;
     }
 
     .btns{
@@ -120,7 +172,7 @@
     }
 
     .btn{
-      padding:16px 35px;
+      padding:16px 38px;
       border-radius:50px;
       text-decoration:none;
       font-weight:700;
@@ -140,54 +192,65 @@
 
     .btn:hover{
       transform:translateY(-5px);
-      box-shadow:0 0 25px rgba(250,204,21,0.4);
+      box-shadow:0 0 30px rgba(250,204,21,0.6);
     }
+
+    /* STATS */
 
     .stats{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:25px;
-      padding:100px 8%;
-      background:#0a0a0a;
+      padding:110px 8%;
+      background:#080808;
     }
 
     .stat-card{
       background:#111;
-      padding:40px 20px;
-      border-radius:25px;
+      padding:45px 20px;
+      border-radius:30px;
       text-align:center;
-      border:1px solid rgba(250,204,21,0.1);
-      transition:0.3s;
+      border:1px solid rgba(250,204,21,0.08);
+      transition:0.4s;
     }
 
     .stat-card:hover{
-      transform:translateY(-10px);
+      transform:translateY(-12px);
       border-color:#facc15;
+      box-shadow:0 0 25px rgba(250,204,21,0.1);
     }
 
     .stat-card h2{
-      font-size:50px;
+      font-size:52px;
       color:#facc15;
       margin-bottom:15px;
     }
 
+    /* ABOUT */
+
     .about{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:60px;
+      gap:70px;
       align-items:center;
-      padding:100px 8%;
+      padding:110px 8%;
     }
 
     .about img{
       width:100%;
-      border-radius:30px;
-      border:2px solid rgba(250,204,21,0.2);
+      border-radius:35px;
+      border:2px solid rgba(250,204,21,0.15);
+      transition:0.4s;
+    }
+
+    .about img:hover{
+      transform:scale(1.02);
     }
 
     .about-text h2{
-      font-size:55px;
-      margin-bottom:30px;
+      font-size:58px;
+      margin-bottom:35px;
+      line-height:1.2;
     }
 
     .gold{
@@ -198,18 +261,20 @@
       color:#d1d5db;
       line-height:2;
       margin-bottom:25px;
-      font-size:17px;
+      font-size:18px;
     }
 
+    /* PROGRAMS */
+
     .programs{
-      padding:100px 8%;
-      background:#0a0a0a;
+      padding:110px 8%;
+      background:#080808;
       text-align:center;
     }
 
     .programs h2{
-      font-size:55px;
-      margin-bottom:60px;
+      font-size:58px;
+      margin-bottom:70px;
     }
 
     .program-grid{
@@ -220,101 +285,112 @@
 
     .program-card{
       background:#111;
-      padding:40px 25px;
-      border-radius:30px;
-      border:1px solid rgba(250,204,21,0.1);
-      transition:0.3s;
+      padding:45px 28px;
+      border-radius:35px;
+      border:1px solid rgba(250,204,21,0.08);
+      transition:0.4s;
     }
 
     .program-card:hover{
-      transform:translateY(-10px);
+      transform:translateY(-12px);
       border-color:#facc15;
+      box-shadow:0 0 25px rgba(250,204,21,0.1);
     }
 
     .program-card h3{
       color:#facc15;
-      font-size:30px;
-      margin-bottom:20px;
+      font-size:32px;
+      margin-bottom:22px;
     }
 
     .program-card p{
       color:#d1d5db;
       line-height:1.9;
+      font-size:17px;
     }
 
+    /* TRANSFORMATIONS */
+
     .transformations{
-      padding:100px 8%;
+      padding:110px 8%;
       text-align:center;
     }
 
     .transformations h2{
-      font-size:55px;
-      margin-bottom:60px;
+      font-size:58px;
+      margin-bottom:70px;
     }
 
     .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:25px;
+      gap:28px;
     }
 
     .gallery img{
       width:100%;
-      height:400px;
+      height:420px;
       object-fit:cover;
-      border-radius:30px;
-      transition:0.4s;
+      border-radius:35px;
+      transition:0.5s;
     }
 
     .gallery img:hover{
       transform:scale(1.05);
     }
 
+    /* TERMINAL */
+
     .terminal{
-      padding:100px 8%;
-      background:#0a0a0a;
+      padding:110px 8%;
+      background:#080808;
     }
 
     .terminal-box{
       background:black;
-      padding:50px;
-      border-radius:30px;
-      border:1px solid rgba(250,204,21,0.2);
+      padding:55px;
+      border-radius:35px;
+      border:1px solid rgba(250,204,21,0.15);
+
       color:#facc15;
       font-size:18px;
-      line-height:2.3;
-      box-shadow:0 0 30px rgba(250,204,21,0.08);
+      line-height:2.4;
+
+      box-shadow:0 0 35px rgba(250,204,21,0.08);
+
       overflow-x:auto;
     }
 
+    /* CONTACT */
+
     .contact{
-      padding:100px 8%;
+      padding:110px 8%;
       text-align:center;
     }
 
     .contact h2{
-      font-size:55px;
+      font-size:58px;
       margin-bottom:30px;
     }
 
     .contact p{
       color:#d1d5db;
-      max-width:800px;
+      max-width:850px;
       margin:auto;
       line-height:2;
-      margin-bottom:40px;
+      margin-bottom:45px;
       font-size:18px;
     }
 
     .socials{
       display:flex;
       justify-content:center;
-      gap:20px;
+      gap:22px;
       flex-wrap:wrap;
     }
 
     .socials a{
-      padding:16px 35px;
+      padding:16px 38px;
       border-radius:50px;
       text-decoration:none;
       font-weight:700;
@@ -331,12 +407,19 @@
       color:#facc15;
     }
 
+    .socials a:hover{
+      transform:translateY(-5px);
+      box-shadow:0 0 30px rgba(250,204,21,0.3);
+    }
+
     footer{
       text-align:center;
-      padding:35px;
-      border-top:1px solid rgba(250,204,21,0.1);
+      padding:40px;
+      border-top:1px solid rgba(250,204,21,0.08);
       color:#9ca3af;
     }
+
+    /* MOBILE */
 
     @media(max-width:900px){
 
@@ -345,7 +428,7 @@
       }
 
       .hero h1{
-        font-size:42px;
+        font-size:46px;
       }
 
       .hero p{
@@ -360,13 +443,18 @@
       .programs h2,
       .transformations h2,
       .contact h2{
-        font-size:38px;
+        font-size:40px;
       }
 
-     .hero img{
-  width:180px;
-  padding:12px;
-}
+      .hero img{
+        width:180px;
+        padding:12px;
+      }
+
+      .mini-tagline{
+        letter-spacing:3px;
+        font-size:12px;
+      }
 
     }
 
@@ -374,6 +462,8 @@
 </head>
 
 <body>
+
+  <!-- NAVBAR -->
 
   <nav>
 
@@ -388,11 +478,17 @@
 
   </nav>
 
+  <!-- HERO -->
+
   <section class="hero">
 
-    <!-- PUT YOUR LOGO IMAGE LINK BELOW -->
+    <!-- REPLACE WITH YOUR LOGO FILE NAME -->
 
     <img src="sujith-logo.png" alt="Sujith Fit Logo">
+
+    <p class="mini-tagline">
+      DISCIPLINE • STRENGTH • CONSISTENCY
+    </p>
 
     <h1>
       BUILD MUSCLE <br>
@@ -416,6 +512,8 @@
     </div>
 
   </section>
+
+  <!-- STATS -->
 
   <section class="stats">
 
@@ -441,7 +539,11 @@
 
   </section>
 
+  <!-- ABOUT -->
+
   <section class="about" id="about">
+
+    <!-- REPLACE WITH HIS REAL PHOTO -->
 
     <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" alt="Coach">
 
@@ -463,34 +565,51 @@
 
   </section>
 
+  <!-- PROGRAMS -->
+
   <section class="programs" id="programs">
 
-    <h2>FITNESS <span class="gold">PROGRAMS</span> 🔥</h2>
+    <h2>
+      FITNESS <span class="gold">PROGRAMS</span> 🔥
+    </h2>
 
     <div class="program-grid">
 
       <div class="program-card">
         <h3>Fat Loss 🔥</h3>
-        <p>Customized workout and nutrition guidance to burn fat effectively.</p>
+
+        <p>
+          Customized workout and nutrition guidance to burn fat effectively.
+        </p>
       </div>
 
       <div class="program-card">
         <h3>Muscle Gain 💪</h3>
-        <p>Structured hypertrophy training focused on building lean muscle.</p>
+
+        <p>
+          Structured hypertrophy training focused on building lean muscle.
+        </p>
       </div>
 
       <div class="program-card">
         <h3>Online Coaching ⚡</h3>
-        <p>Weekly progress tracking and personal support.</p>
+
+        <p>
+          Weekly progress tracking and personal support.
+        </p>
       </div>
 
     </div>
 
   </section>
 
+  <!-- TRANSFORMATIONS -->
+
   <section class="transformations" id="transformations">
 
-    <h2>CLIENT <span class="gold">TRANSFORMATIONS</span> ⚡</h2>
+    <h2>
+      CLIENT <span class="gold">TRANSFORMATIONS</span> ⚡
+    </h2>
 
     <div class="gallery">
 
@@ -503,6 +622,8 @@
     </div>
 
   </section>
+
+  <!-- TERMINAL -->
 
   <section class="terminal">
 
@@ -531,9 +652,13 @@
 
   </section>
 
+  <!-- CONTACT -->
+
   <section class="contact" id="contact">
 
-    <h2>START YOUR <span class="gold">TRANSFORMATION</span> 🚀</h2>
+    <h2>
+      START YOUR <span class="gold">TRANSFORMATION</span> 🚀
+    </h2>
 
     <p>
       Ready to build your best physique naturally?
@@ -546,6 +671,8 @@
         Instagram 🔥
       </a>
 
+      <!-- ADD HIS NUMBER BELOW -->
+
       <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="whatsapp">
         WhatsApp 💬
       </a>
@@ -557,6 +684,47 @@
   <footer>
     Made with ❤️ by his DevOps Girl
   </footer>
+
+  <!-- SCROLL ANIMATION -->
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <script>
+
+    ScrollReveal().reveal('.stat-card',{
+      distance:'60px',
+      duration:1200,
+      origin:'bottom',
+      interval:200
+    });
+
+    ScrollReveal().reveal('.program-card',{
+      distance:'60px',
+      duration:1200,
+      origin:'bottom',
+      interval:200
+    });
+
+    ScrollReveal().reveal('.gallery img',{
+      distance:'60px',
+      duration:1200,
+      origin:'bottom',
+      interval:200
+    });
+
+    ScrollReveal().reveal('.about img',{
+      distance:'60px',
+      duration:1200,
+      origin:'left'
+    });
+
+    ScrollReveal().reveal('.about-text',{
+      distance:'60px',
+      duration:1200,
+      origin:'right'
+    });
+
+  </script>
 
 </body>
 </html>

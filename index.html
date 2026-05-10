@@ -50,6 +50,7 @@
       display:flex;
       gap:35px;
       list-style:none;
+      align-items:center;
     }
 
     nav ul li a{
@@ -61,6 +62,19 @@
 
     nav ul li a:hover{
       color:#facc15;
+    }
+
+    .apply-btn{
+      background:#facc15;
+      color:black !important;
+      padding:12px 22px;
+      border-radius:40px;
+      font-weight:700;
+    }
+
+    .apply-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 0 20px rgba(250,204,21,0.5);
     }
 
     /* HERO */
@@ -147,25 +161,20 @@
       font-size:78px;
       line-height:1.15;
       font-weight:900;
-      margin-bottom:25px;
-
-      background:linear-gradient(to right,#facc15,#fde68a,#facc15);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-
-      animation:glow 2s infinite alternate;
+      margin-bottom:20px;
+      color:white;
     }
 
-    @keyframes glow{
+    .gold-text{
+      color:#facc15;
+    }
 
-      from{
-        text-shadow:0 0 10px rgba(250,204,21,0.4);
-      }
-
-      to{
-        text-shadow:0 0 30px rgba(250,204,21,0.9);
-      }
-
+    .build-text{
+      font-size:24px;
+      color:#facc15;
+      margin-bottom:30px;
+      font-weight:600;
+      letter-spacing:2px;
     }
 
     .hero p{
@@ -184,22 +193,14 @@
     }
 
     .btn{
-      padding:16px 38px;
+      padding:18px 40px;
       border-radius:50px;
       text-decoration:none;
       font-weight:700;
       transition:0.3s;
       font-size:17px;
-    }
-
-    .btn-primary{
       background:#facc15;
       color:black;
-    }
-
-    .btn-secondary{
-      border:2px solid #facc15;
-      color:#facc15;
     }
 
     .btn:hover{
@@ -371,6 +372,10 @@
         font-size:18px;
       }
 
+      .build-text{
+        font-size:18px;
+      }
+
       .about{
         grid-template-columns:1fr;
       }
@@ -408,6 +413,19 @@
       <li><a href="#about">About</a></li>
       <li><a href="#programs">Programs</a></li>
       <li><a href="#transformations">Transformations</a></li>
+
+      <!-- GOOGLE FORM LINK -->
+
+      <li>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZhQIuXmHr8ero6aLC0uepYRBvVNhvw56kra_fksaImVqFNg/viewform?pli=1"
+           target="_blank"
+           class="apply-btn">
+
+           Apply Coaching 🚀
+
+        </a>
+      </li>
+
     </ul>
 
   </nav>
@@ -416,8 +434,6 @@
 
   <section class="hero">
 
-    <!-- YOUR LOGO FILE -->
-
     <img src="sujith-logo.png" alt="Sujith Fit Logo">
 
     <p class="mini-tagline">
@@ -425,24 +441,26 @@
     </p>
 
     <h1>
-      BUILD MUSCLE <br>
-      LOSE FAT ⚡
+      START YOUR <span class="gold-text">TRANSFORMATION</span> 🚀
     </h1>
 
+    <div class="build-text">
+      BUILD MUSCLE 💪 • LOSE FAT 🔥
+    </div>
+
     <p>
-      Certified Fitness Coach helping people transform their body, mindset and lifestyle naturally through discipline, consistency and smart training.
+      Ready to build your best physique naturally?
+      Let’s work together and transform your body and mindset.
     </p>
 
     <div class="btns">
 
-      <a href="https://instagram.com/sujith.fit" target="_blank" class="btn btn-primary">
-        @sujith.fit 🔥
-      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZhQIuXmHr8ero6aLC0uepYRBvVNhvw56kra_fksaImVqFNg/viewform?pli=1E"
+         target="_blank"
+         class="btn">
 
-      <!-- PASTE GOOGLE FORM LINK BELOW -->
+         Fill The Form To Apply For Coaching 🚀
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdZhQIuXmHr8ero6aLC0uepYRBvVNhvw56kra_fksaImVqFNg/viewform?pli=1" target="_blank" class="btn btn-secondary">
-        Fill The Form To Apply For Coaching 🚀
       </a>
 
     </div>
@@ -478,8 +496,6 @@
   <!-- ABOUT -->
 
   <section class="about" id="about">
-
-    <!-- REPLACE WITH HIS REAL PHOTO -->
 
     <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?q=80&w=1200&auto=format&fit=crop" alt="Coach">
 
@@ -564,47 +580,6 @@
   <footer>
     Transforming bodies, building confidence, creating stronger lives 💪
   </footer>
-
-  <!-- SCROLL REVEAL -->
-
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <script>
-
-    ScrollReveal().reveal('.stat-card',{
-      distance:'60px',
-      duration:1200,
-      origin:'bottom',
-      interval:200
-    });
-
-    ScrollReveal().reveal('.program-card',{
-      distance:'60px',
-      duration:1200,
-      origin:'bottom',
-      interval:200
-    });
-
-    ScrollReveal().reveal('.gallery img',{
-      distance:'60px',
-      duration:1200,
-      origin:'bottom',
-      interval:200
-    });
-
-    ScrollReveal().reveal('.about img',{
-      distance:'60px',
-      duration:1200,
-      origin:'left'
-    });
-
-    ScrollReveal().reveal('.about-text',{
-      distance:'60px',
-      duration:1200,
-      origin:'right'
-    });
-
-  </script>
 
 </body>
 </html>
